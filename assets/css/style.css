@@ -7,6 +7,17 @@ body {
   padding: 0;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   line-height: 1.5;
+  background-color: red;
+}
+
+
+nav h1 {
+  text-align: left;
+}
+
+nav a {
+  text-decoration-line: none;
+  text-align: right;
 }
 
 h1,
