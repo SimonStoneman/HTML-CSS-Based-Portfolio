@@ -10,15 +10,71 @@ body {
   background-color: red;
 }
 
-
-nav h1 {
-  text-align: left;
+header{
+  display: flex;
+  justify-content:space-between; /*space out on x-axis */
 }
 
 nav a {
   text-decoration-line: none;
-  text-align: right;
 }
+
+.hero-banner {
+  /* margin: 0px 5%; */
+  display: flex;
+  min-height: 500px;
+  height: 70vh;
+  background-image: url(../../images/02-hero-bg.jpg);
+  background-repeat: no-repeat;
+  align-items: flex-end;
+}
+
+.hero-banner h2 {
+  color: white;
+}
+
+main{
+  /* grid-template-columns: ;
+  display: grid;
+  grid-template-areas: 
+  'about-title about-cont about-cont'
+  'work-title work-cont work-cont'
+  'contact-title contact-cont contact-cont';
+  */
+}
+
+#about {
+
+  grid-template-columns: ;
+  display: grid;
+  grid-template-areas: 
+  'about-title about-cont about-cont';
+
+}
+
+#about h2 {
+ grid-area: about-title;
+ background-color: aqua;
+ padding: 100px 50px;
+ text-align: center;
+}
+
+#about article {
+  grid-area: about-cont;
+  background-color: white;
+ }
+
+
+#work h2 {
+  grid-area: work-title;
+  background-color:blue;
+ }
+
+ #contact h2 {
+  grid-area: contact-title;
+  background-color:chocolate;
+ }
+
 
 h1,
 h2,
@@ -26,9 +82,9 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0;
+  margin: 5;
 }
 
 p {
-  margin: 0;
+  margin: 5;
 }
