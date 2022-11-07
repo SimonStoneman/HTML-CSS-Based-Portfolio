@@ -2,17 +2,25 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
+  display:grid;
+  grid-template-columns: 1fr 1fr; /* set 2 cols */
+  grid-template-rows: 50px 200px auto 50px;
   margin: 0;
   padding: 0;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   line-height: 1.5;
-  background-color: red;
-}
+} 
 
-header{
-  display: flex;
-  justify-content:space-between; /*space out on x-axis */
+header {
+  grid-column: 1/3;
+  display: flex; /* use flex to position logo and links correctly */ 
+  align-items: center; /* center logo and nav elements in y plane */
+  justify-content: space-between; /*space logo and nav links either side of screen */
 }
 
 nav a {
@@ -21,57 +29,70 @@ nav a {
 
 .hero-banner {
   /* margin: 0px 5%; */
-  display: flex;
-  min-height: 500px;
-  height: 70vh;
+  grid-column: 1/3;
   background-image: url(../../images/02-hero-bg.jpg);
   background-repeat: no-repeat;
-  align-items: flex-end;
 }
 
 .hero-banner h2 {
+  display:flex;
+  align-items: flex-end;
   color: white;
+
 }
 
 main{
-  /* grid-template-columns: ;
+  grid-column: 1/3;
   display: grid;
   grid-template-areas: 
-  'about-title about-cont about-cont'
-  'work-title work-cont work-cont'
-  'contact-title contact-cont contact-cont';
-  */
+  'sec-about sec-about'
+  'sec-work sec-work'
+  'sec-cont sec-cont';
+}
+main > section {
+  grid-column: 1/3;
+  display:grid;
 }
 
-#about {
-
-  grid-template-columns: ;
-  display: grid;
-  grid-template-areas: 
-  'about-title about-cont about-cont';
-
+section #about {
+  grid-area: sec-about;
+  background-color: aqua;
+  padding: 100px 50px;
+  text-align: center;
+  border-color: aqua;
+  border: 5px;
 }
 
 #about h2 {
- grid-area: about-title;
- background-color: aqua;
- padding: 100px 50px;
- text-align: center;
+  grid-area: about-t;
 }
 
 #about article {
-  grid-area: about-cont;
+  grid-area: article;
   background-color: white;
  }
 
+section #work {
+  grid-area: sec-work;
+}
 
 #work h2 {
   grid-area: work-title;
   background-color:blue;
  }
+ 
+ #work article #proj-1 {
+  grid-area: proj-1;
+ }
+ #work article #proj-2 {
+  grid-area: proj-2;
 
- #contact h2 {
-  grid-area: contact-title;
+ } #work article #proj-3 {
+  grid-area: proj-3;
+ }
+
+ section #contact {
+  grid-area: sec-cont;
   background-color:chocolate;
  }
 
@@ -87,4 +108,8 @@ h6 {
 
 p {
   margin: 5;
+}
+
+footer {
+  grid-column: 1/3;
 }
